@@ -115,7 +115,7 @@ function createPagination(totalPages, page) {
     liTag += `<li class="btn next" onclick="createPagination(${totalPages}, ${
       page + 1
     })"><svg width="16" height="16">
-          <use href="/images/icons.svg#icon-arrow-right"></use>
+          <use href="./images/icons.svg#icon-arrow-right"></use>
         </svg></li>`;
   }
 
