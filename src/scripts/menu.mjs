@@ -7,7 +7,7 @@ const title = document.querySelector('title');
 const linkList = document.querySelector('ul#link-menu');
 const menuItem = [
   {
-    name: 'Menu',
+    name: '00. Menu',
     link: './index.html',
   },
   {
@@ -15,8 +15,8 @@ const menuItem = [
     link: './scrollbar.html',
   },
   {
-    name: '02. Rozgałęzienia i cykle',
-    link: '../html/02-rozgalezieniaCykle.html',
+    name: '02. Pagination',
+    link: './pagination.html',
   },
   {
     name: '03. Tablice',
@@ -33,7 +33,7 @@ const linkItem = [
     link: '../index.html',
   },
   {
-    name: '01. Zmienne i typy',
+    name: '01. Zmienne  typy',
     link: '../html/01-zajeciaWprowadzajace.html',
   },
 ];

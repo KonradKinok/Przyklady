@@ -1,0 +1,288 @@
+
+//section2
+.pagination-s2a1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination-s2a1 a {
+    padding: 5px 10px;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    color: #333;
+}
+
+.pagination-s2a1 a.current {
+    background-color: #333;
+    color: #fff;
+}
+
+// section3
+// @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+// * {
+//     margin: 0;
+//     padding: 0;
+//     box-sizing: border-box;
+//     font-family: 'Poppins', sans-serif;
+// }
+
+// body {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     background: #20B2AA;
+//     min-height: 100vh;
+//     padding: 10px;
+// }
+
+.pagination ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background: inherit;
+    padding: 8px;
+    border-radius: 50px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.pagination ul li {
+    color: #20B2AA;
+    list-style: none;
+    line-height: 45px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s ease;
+}
+
+.pagination ul li.numb {
+    list-style: none;
+    height: 45px;
+    width: 45px;
+    margin: 0 3px;
+    line-height: 45px;
+    border-radius: 50%;
+}
+
+.pagination ul li.numb.first {
+    margin: 0px 3px 0 -5px;
+}
+
+.pagination ul li.numb.last {
+    margin: 0px -5px 0 3px;
+}
+
+.pagination ul li.dots {
+    font-size: 22px;
+    cursor: default;
+}
+
+.pagination ul li.btn {
+    padding: 0 20px;
+    border-radius: 50px;
+}
+
+.pagination li.active,
+.pagination ul li.numb:hover,
+.pagination ul li:first-child:hover,
+.pagination ul li:last-child:hover {
+    color: #fff;
+    background: #20B2AA;
+}
+
+.section3-icon {
+    width:16px;
+     height:16px;
+      
+       fill:"none";
+       stroke:"black";
+        stroke-width:1.33333;
+         stroke-linecap:"round";
+          stroke-linejoin:"round"
+}
+//section3 article1
+.article1 {
+    margin: 40px auto;
+}
+
+.pagination-s3a1 ul {
+    // width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 3px;
+    // padding: 8px;
+    // border-radius: 50px;
+    // box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    width: 374px;
+
+    height: 40px;
+}
+
+.pagination-s3a1 ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33333;
+    color: #000;
+    width: 40px;
+    height: 40px;
+
+    list-style: none;
+
+
+    cursor: pointer;
+    user-select: none;
+
+
+
+}
+
+.pagination-s3a1 ul li.numb-s3a1 {
+    // list-style: none;
+    // height: 45px;
+    // width: 45px;
+    // margin: 0 3px;
+    // line-height: 45px;
+    border-radius: 5px;
+
+}
+
+.pagination-s3a1 ul li.numb-s3a1.first {
+    align-items: center;
+}
+
+.pagination-s3a1 ul li.numb-s3a1.last {
+    align-items: center;
+}
+
+.pagination-s3a1 ul li.dots-s3a1 {
+    padding-bottom: 8px;
+    cursor: default;
+    width: auto;
+}
+
+.pagination-s3a1 ul li.btn-s3a1 {
+    border-radius: 5px;
+    background: rgba(247, 247, 247, 1);
+
+
+}
+
+.pagination-s3a1 ul li.next-s3a1 {}
+
+.pagination-s3a1 ul li.prev-s3a1 {
+
+    transform: rotate(-180deg);
+}
+
+.pagination-s3a1 li.active-s3a1,
+.pagination-s3a1 ul li.numb-s3a1:hover {
+    background: rgba(255, 107, 8, 0.5);
+    color: #fff;
+
+}
+
+.pagination-s3a1 ul li:first-child:hover,
+.pagination-s3a1 ul li:last-child:hover {
+    background: rgba(247, 247, 247, 0.8);
+}
+
+
+//section3 article3
+.article3{
+    margin: 40px auto;
+}
+.control-pagination ul {
+    // width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 3px;
+    // padding: 8px;
+    // border-radius: 50px;
+    // box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    width: 374px;
+   
+        height: 40px;
+}
+
+.control-pagination ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 1.33333;
+        color: #000;
+    width: 40px;
+        height: 40px;
+    
+    list-style: none;
+    
+    
+    cursor: pointer;
+    user-select: none;
+   
+
+
+}
+
+.control-pagination ul li.numb {
+    // list-style: none;
+    // height: 45px;
+    // width: 45px;
+    // margin: 0 3px;
+    // line-height: 45px;
+    border-radius: 5px;
+
+}
+
+.control-pagination ul li.numb.first {
+    align-items: center;
+}
+
+.control-pagination ul li.numb.last {
+    align-items: center;
+}
+
+.control-pagination ul li.dots  {
+    padding-bottom: 8px;
+    cursor: default;
+    width: auto;
+}
+
+.control-pagination ul li.btn {
+    border-radius: 5px;
+        background: rgba(247, 247, 247, 1);
+        
+
+}
+.control-pagination ul li.next {
+    
+    
+}
+.control-pagination ul li.prev {
+    
+    transform: rotate(-180deg);
+}
+
+.control-pagination li.active,
+.control-pagination ul li.numb:hover
+ {
+    background: rgba(255, 107, 8, 0.5);
+    color: #fff;
+    
+}
+
+.control-pagination ul li:first-child:hover,
+.control-pagination ul li:last-child:hover{
+background: rgba(247, 247, 247, 0.8);
+}
+
