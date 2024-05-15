@@ -52,7 +52,7 @@ generatePagination(currentPage_s2a1, totalPages_s2a1);
 // https://www.youtube.com/watch?v=d2ve7xQNco8
 // selecting required element
 const element = document.querySelector('.control-pagination ul');
-let totalPages = 40;
+let totalPages = 1000;
 let page = 10;
 
 element.innerHTML = createPagination(totalPages, page);
@@ -67,7 +67,7 @@ function createPagination(totalPages, page) {
     liTag += `<li class="btn prev" onclick="createPagination(${totalPages}, ${
       page - 1
     })"><svg width="16" height="16">
-                  <use href="./images/icons.svg#icon-arrow-right"></use>
+                  <use href="../images/icons.svg#icon-arrow-right"></use>
                 </svg></li>`;
   }
 
