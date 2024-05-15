@@ -51,14 +51,15 @@ generatePagination(currentPage_s2a1, totalPages_s2a1);
 // https://www.codingnepalweb.com/pagination-ui-design-javascript/
 // https://www.youtube.com/watch?v=d2ve7xQNco8
 // selecting required element
-const element = document.querySelector('.control-pagination ul');
+const controlPagination = document.querySelector('.control-pagination ul');
 let totalPages = 1000;
 let page = 10;
 
-element.innerHTML = createPagination(totalPages, page);
+controlPagination.innerHTML = createPagination(totalPages, page);
 
 function createPagination(totalPages, page) {
   let liTag = '';
+  let currentPage;
   let active;
   let beforePage = page - 2;
   let afterPage = page + 2;
@@ -98,10 +99,12 @@ function createPagination(totalPages, page) {
     }
     if (page == plength) {
       active = 'active';
+      currentPage = "id = 'pagination-current-page'";
     } else {
       active = '';
+      currentPage = '';
     }
-    liTag += `<li class="numb ${active}" onclick="createPagination(${totalPages}, ${plength})"><span>${plength}</span></li>`;
+    liTag += `<li class="numb ${active}" ${currentPage} onclick="createPagination(${totalPages}, ${plength})"><span>${plength}</span></li>`;
   }
 
   if (page < totalPages - 2) {
@@ -119,7 +122,7 @@ function createPagination(totalPages, page) {
         </svg></li>`;
   }
 
-  element.innerHTML = liTag;
+  controlPagination.innerHTML = liTag;
   return liTag;
 }
 
@@ -167,9 +170,6 @@ function createPaginationOrigin(totalPages, page) {
     afterPage = afterPage + 1;
   }
   for (var plength = beforePage; plength <= afterPage; plength++) {
-    console.log('beforePage', beforePage);
-    console.log('afterPage', afterPage);
-    console.log('plength', plength);
     if (plength > totalPages) {
       //if plength is greater than totalPage length then continue
       continue;
