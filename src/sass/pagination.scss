@@ -1,3 +1,19 @@
+.example-theory-pagination {
+    display: flex;
+    // gap: 40px;
+    // justify-content: space-between;
+    margin-bottom: 20px;
+    max-width: 1200px;
+}
+
+.example-theory-pre-pagination {
+    font-size: 14px;
+    display: flex;
+    max-width: 1200px;
+    // overflow: auto;
+    // border: 2px dashed #f0e3e3;
+    padding: 5px;
+}
 
 //section2
 .pagination-s2a1 {
@@ -197,8 +213,13 @@
 
 //section3 article3
 .article2,
-.article3{
+.article3,
+.article4,
+.article5,
+.article6,
+.article7{
     margin: 40px auto;
+   
 }
 .control-pagination ul {
     // width: 100%;
@@ -277,13 +298,93 @@
 .control-pagination li.active,
 .control-pagination ul li.numb:hover
  {
-    background: rgba(255, 107, 8, 0.5);
+    background-color: rgba(255, 107, 8, 0.5);
     color: #fff;
     
 }
 
-.control-pagination ul li:first-child:hover,
-.control-pagination ul li:last-child:hover{
+.btn:hover,
+.btn:hover{
 background: rgba(247, 247, 247, 0.8);
 }
 
+//New Pagination
+.pagination-new-list {
+    // width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 3px;
+    // padding: 8px;
+    // border-radius: 50px;
+    // box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    width: 374px;
+
+    height: 40px;
+}
+
+.pagination-new-first,
+.pagination-new-list li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33333;
+    color: #000;
+    width: 40px;
+    height: 40px;
+    list-style: none;
+    cursor: pointer;
+    user-select: none;
+}
+
+.control-pagination ul li.numb {
+    // list-style: none;
+    // height: 45px;
+    // width: 45px;
+    // margin: 0 3px;
+    // line-height: 45px;
+    border-radius: 5px;
+
+}
+
+.control-pagination ul li.numb.first {
+    align-items: center;
+}
+
+.control-pagination ul li.numb.last {
+    align-items: center;
+}
+
+.control-pagination ul li.dots {
+    padding-bottom: 8px;
+    cursor: default;
+    width: auto;
+}
+
+.pagination-new-first {
+    border-radius: 5px;
+    background: rgba(247, 247, 247, 1);
+
+
+}
+
+.control-pagination ul li.next {}
+
+.control-pagination ul li.prev {
+
+    transform: rotate(-180deg);
+}
+
+.control-pagination li.active,
+.control-pagination ul li.numb:hover {
+    background-color: rgba(255, 107, 8, 0.5);
+    color: #fff;
+
+}
+
+.btn:hover,
+.btn:hover {
+    background: rgba(247, 247, 247, 0.8);
+}

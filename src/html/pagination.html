@@ -118,18 +118,80 @@
             </ul>
           </div>
         </article>
-        <article id="article3">
+        <article id="article3" class="article1">
           <div class="control-pagination" id="control-pagination">
             <ul>
               <!--pages or li are comes from javascript -->
             </ul>
           </div>
         </article>
+        <article id="article4">
+          <div class="control-pagination" id="control-pagination">
+            <ul>
+              <li class="btn prev" onclick="createPagination(1000, 9)">
+                <svg width="16" height="16">
+                  <use href="../images/icons.svg#icon-arrow-right"></use>
+                </svg>
+              </li>
+              <li class="first numb" onclick="createPagination(1000, 1)">
+                <span>1</span>
+              </li>
+              <li class="dots"><span>...</span></li>
+              <li class="numb" onclick="createPagination(1000, 8)">
+                <span>8</span>
+              </li>
+              <li class="numb" onclick="createPagination(1000, 9)">
+                <span>9</span>
+              </li>
+              <li
+                class="numb active"
+                id="pagination-current-page"
+                onclick="createPagination(1000, 10)"
+              >
+                <span>10</span>
+              </li>
+              <li class="numb" onclick="createPagination(1000, 11)">
+                <span>11</span>
+              </li>
+              <li class="numb" onclick="createPagination(1000, 12)">
+                <span>12</span>
+              </li>
+              <li class="dots"><span>...</span></li>
+              <li class="last numb" onclick="createPagination(1000, 1000)">
+                <span>1000</span>
+              </li>
+              <li class="btn next" onclick="createPagination(1000, 11)">
+                <svg width="16" height="16">
+                  <use href="../images/icons.svg#icon-horse-icon"></use>
+                </svg>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article id="article6" class="article1">
+          <div id="pagination-new" class="pagination-new">
+            <ul id="pagination-new-list" class="pagination-new-list">
+              <!--pagination-new -->
+            </ul>
+          </div>
+          <div
+            id="example-pagination-new"
+            class="example-theory-pagination"
+          ></div>
+        </article>
+        <!-- <ul id="pagination-new-list" class="pagination-new-list">
+          <li class="pagination-new-first" data-page="6">
+            <svg width="16" height="16" class="pagination-new-icon">
+              <use href="../images/icons.svg#icon-arrow-right"></use>
+            </svg>
+          </li> -->
+        </ul>
       </section>
     </main>
     <include src="./partials/footer.html"></include>
     <!-- SKRYPTY JS -->
     <script defer src="../scripts/menu.mjs"></script>
-    <script defer src="../scripts/pagination1.mjs"></script>
+    <script defer src="../scripts/pagination1.mjs" type="module"></script>
   </body>
 </html>

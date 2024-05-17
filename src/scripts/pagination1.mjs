@@ -51,11 +51,11 @@ generatePagination(currentPage_s2a1, totalPages_s2a1);
 // https://www.codingnepalweb.com/pagination-ui-design-javascript/
 // https://www.youtube.com/watch?v=d2ve7xQNco8
 // selecting required element
-const controlPagination = document.querySelector('.control-pagination ul');
+const pagination1 = document.querySelector('.control-pagination ul');
 let totalPages = 1000;
 let page = 10;
 
-controlPagination.innerHTML = createPagination(totalPages, page);
+pagination1.innerHTML = createPagination(totalPages, page);
 
 function createPagination(totalPages, page) {
   let liTag = '';
@@ -118,11 +118,11 @@ function createPagination(totalPages, page) {
     liTag += `<li class="btn next" onclick="createPagination(${totalPages}, ${
       page + 1
     })"><svg width="16" height="16">
-          <use href="./images/icons.svg#icon-arrow-right"></use>
+          <use href="../images/icons.svg#icon-arrow-right"></use>
         </svg></li>`;
   }
 
-  controlPagination.innerHTML = liTag;
+  pagination1.innerHTML = liTag;
   return liTag;
 }
 
@@ -206,3 +206,177 @@ function createPaginationOrigin(totalPages, page) {
   elementOrigin.innerHTML = liTag; //add li tag inside ul tag
   return liTag; //reurn the li tag
 }
+const paginationHtml = document.querySelector('ul#pagination-new-list');
+const paginationPracticeHtml = document.querySelector('div#pagination-new');
+const paginationTheoryHtml = document.querySelector(
+  'div#example-pagination-new'
+);
+
+const createPaginationNewPage = 7;
+const createPaginationNTotalPages = 40;
+createPaginationNew(
+  createPaginationNTotalPages,
+  createPaginationNewPage,
+  something
+);
+function createPaginationNew(totalPages, page, callback) {
+  let liTag = '';
+  let currentPage;
+  let active;
+  let beforePage = page - 2;
+  let afterPage = page + 2;
+  //Zmienne
+  let listItemFirst = null;
+  let svgIcon = null;
+  let useIcon = null;
+  let img = document.createElement('img');
+  if (page > 1) {
+    listItemFirst = document.createElement('li');
+    listItemFirst.classList.add('pagination-new-first');
+    listItemFirst.dataset.page = `${page - 1}`;
+    // svgIcon = document.createElement('svg');
+    // svgIcon.setAttribute('width', '16');
+    // svgIcon.setAttribute('height', '16');
+    // listItemFirst.appendChild(svgIcon);
+    // useIcon = document.createElement('use');
+    // useIcon.setAttribute('href', '../images/icons.svg#icon-arrow-right');
+    // svgIcon.appendChild(useIcon);
+    // Create the SVG icon using the SVG namespac
+
+    const svgIcon = document.createElementNS(
+      'http://www.w3.org/2000/svg',
+      'svg'
+    );
+    svgIcon.setAttribute('width', '16');
+    svgIcon.setAttribute('height', '16');
+    svgIcon.classList.add('pagination-new-icon');
+
+    // Create the <use> element using the SVG namespace
+    const useElement = document.createElementNS(
+      'http://www.w3.org/2000/svg',
+      'use'
+    );
+    useElement.setAttributeNS(
+      'http://www.w3.org/1999/xlink',
+      'href',
+      '../images/icons.svg#icon-arrow-right'
+    );
+    // Append the <use> element to the SVG
+    svgIcon.appendChild(useElement);
+
+    // Append the SVG to the list item
+    listItemFirst.appendChild(img);
+
+    liTag += `<li class="btn prev" data-page="${
+      page - 1
+    }"><svg width="16" height="16">
+                  <use href="../images/icons.svg#icon-arrow-right"></use>
+                </svg></li>`;
+  }
+
+  if (page > 3) {
+    liTag += `<li class="first numb" data-page="1"><span>1</span></li>`;
+    if (page > 4) {
+      liTag += `<li class="dots"><span>...</span></li>`;
+    }
+  }
+
+  if (page == totalPages) {
+    beforePage = beforePage - 1;
+  } else if (page == totalPages - 1) {
+    beforePage = beforePage;
+  }
+  if (page == 1) {
+    afterPage = afterPage + 1;
+  } else if (page == 2) {
+    afterPage = afterPage;
+  }
+
+  for (var plength = beforePage; plength <= afterPage; plength++) {
+    if (plength > totalPages) {
+      continue;
+    }
+    if (plength <= 0) {
+      continue;
+    }
+    if (page == plength) {
+      active = 'active';
+      currentPage = "id = 'pagination-current-page'";
+    } else {
+      active = '';
+      currentPage = '';
+    }
+    liTag += `<li class="numb ${active}" ${currentPage} data-page="${plength}"><span>${plength}</span></li>`;
+  }
+
+  if (page < totalPages - 2) {
+    if (page < totalPages - 3) {
+      liTag += `<li class="dots"><span>...</span></li>`;
+    }
+    liTag += `<li class="last numb" data-page="${totalPages}"><span>${totalPages}</span></li>`;
+  }
+
+  if (page < totalPages) {
+    liTag += `<li class="btn next" data-page="${
+      page + 1
+    }"><svg width="16" height="16">
+          <use href="./images/icons.svg#icon-arrow-right"></use>
+        </svg></li>`;
+  }
+  console.log('listItemFirst', listItemFirst);
+  // paginationHtml.innerHTML = liTag;
+  if (paginationHtml) {
+    paginationPracticeHtml.appendChild(listItemFirst);
+  }
+  // Add event listeners
+  const paginationItems = paginationHtml.querySelectorAll('li[data-page]');
+  paginationItems.forEach(item => {
+    item.addEventListener('click', event => {
+      const newPage = Number(event.currentTarget.getAttribute('data-page'));
+      callback(newPage);
+    });
+  });
+  // if (list) {
+  //   list.appendChild(listItem);
+  // }
+  showHtml(paginationTheoryHtml, paginationPracticeHtml);
+
+  return liTag;
+}
+
+function showHtml(example_theory, example_practice) {
+  const phrase = document.createElement('pre');
+  phrase.classList.add('example-theory-pre-pagination');
+  const examplePracticeInnerHtml = example_practice.innerHTML
+    .split('  ')
+    .join('');
+
+  phrase.textContent = `HTML1: ${examplePracticeInnerHtml}`;
+  example_theory.prepend(phrase);
+}
+
+let int = 1;
+function something() {
+  console.log('function something', int);
+  int++;
+}
+// menuItem.forEach(element => {
+//   const listItem = document.createElement('li');
+//   const linkItem = document.createElement('a');
+
+//   linkItem.href = element.link;
+//   linkItem.textContent = element.name;
+//   // linkItem.classList.add('link');
+//   if (title.textContent === element.name.slice(4)) {
+//     linkItem.classList.add('current-page');
+//     const footerTitle = document.querySelector('div#footer-title');
+//     if (footerTitle) {
+//       footerTitle.textContent = element.name;
+//     }
+//   }
+
+//   listItem.appendChild(linkItem);
+//   if (list) {
+//     list.appendChild(listItem);
+//   }
+// });
